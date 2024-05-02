@@ -151,3 +151,4 @@ dropdownMenu.addEventListener('mouseleave', () => {
   // Nascondi il menu a tendina quando il mouse esce
   dropdownMenu.style.display = 'none';
 });
+
