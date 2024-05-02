@@ -3,20 +3,71 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Classifica del Torneo</title>
+<title>Torneo</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
+<style>
+  #fasi-girone .fase:first-child {
+    margin-top: 20px;
+  }
+  /* Stili per i riquadri delle fasi del girone */
+.fase {
+  border: 2px solid #ccc; /* Bordo di 2px solido colore grigio */
+  border-radius: 10px; /* Bordi arrotondati */
+  padding: 20px; /* Spaziatura interna */
+  margin-bottom: 20px; /* Margine inferiore */
+  opacity: 0.8;
+  background-image: url(sfondo_racchette.jpeg);
+  background-repeat: repeat;
+  background-size: 50%;
+  background-color:rgba(255, 255, 255, 0.5); /* Colore di sfondo */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Ombra */
+}
+
+/* Stili per il titolo delle fasi del girone */
+.fase h2 {
+  font-family: 'Arial', sans-serif; /* Font del titolo */
+  font-size: 26px; /* Dimensione del testo */
+  color: #000000; /* Colore del testo */
+  margin-bottom: 10px; /* Spazio inferiore */
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Ombra di contorno */
+  padding-left: 30px;
+}
+
+/* Stili per il link delle fasi del girone */
+.fase p a {
+  font-family: 'Arial', sans-serif; /* Font del link */
+  font-size: 16px; /* Dimensione del testo */
+  color: #027bfc; /* Colore del testo */
+  text-decoration: none; /* Rimuovi la sottolineatura */
+  transition: color 0.3s; /* Transizione dsel colore */
+  padding-left: 30px;
+}
+
+/* Stili per il link delle fasi del girone al passaggio del mouse */
+.fase p a:hover {
+  color: #d9bc17; /* Cambia colore al passaggio del mouse */}
+
+</style>
 </head>
 <body>
 
 <header>
   <div class="logo-container"></div>
   <img src="logoCUS.jpeg" alt="Logo del Torneo" class="logo">
-  <h1>Classifica del Torneo</h1>
+  <h1>Torneo</h1>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="torneo.html">Home</a></li>
       <li><a href="calendario.html">Calendario</a></li>
-      <li><a href="classifica.html">Classifica</a></li>
+      <li class="dropdown">
+        <a href="classifica.html" class="dropbtn">Classifica</a>
+        <div class="dropdown-content">
+          <a href="gironi1.html">Fase Gironi 1</a>
+          <a href="gironi2.html">Fase Gironi 2</a>
+          <a href="gironi3.html">Fase Gironi 3</a>
+        </div>
+      </li>
       <li><a href="regolamento.html">Regolamento</a></li>
       <li><a href="contatti.html">Contatti</a></li>
       <li><a href="partecipanti.html">Partecipanti</a></li>
@@ -25,47 +76,24 @@
 </header>
 
 <main>
-  <section id="classifica-content">
-    <h2>Classifica Attuale</h2>
-    <!-- Aggiungi qui la tabella della classifica -->
-    <table>
-      <thead>
-        <tr>
-          <th>Posizione</th>
-          <th>Giocatore</th>
-          <th>Punti</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>Ansaldo Marco</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Salina Jonathan</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Vitiello Daniele</td>
-          <td>0</td>
-        </tr>
-        <tr>
-          <td>4</td>
-          <td>Degl'Innocenti Ranieri</td>
-          <td>0</td>
-        </tr>
-        <!-- Aggiungi altre righe per gli altri giocatori -->
-      </tbody>
-    </table>
+  <section id="introduction">
+    <h2>Benvenuti alle Fasi del Girone</h2>
+    <p>In questa sezione potete accedere alle diverse fasi del girone.</p>
   </section>
 
-  <!-- Sezione per il link alla fase a gironi -->
-  <section id="link-fase-gironi">
-    <h2>Fase a Gironi</h2>
-    <p><a href="gironi1.html">Vai alla fase a gironi</a></p>
+  <section id="fasi-girone">
+    <div class="fase">
+      <h2>Fase Gironi 1</h2>
+      <p><a href="gironi1.html">Vai alla Fase Gironi 1</a></p>
+    </div>
+    <div class="fase">
+      <h2>Fase Gironi 2</h2>
+      <p><a href="gironi2.html">Vai alla Fase Gironi 2</a></p>
+    </div>
+    <div class="fase">
+      <h2>Fase Gironi 3</h2>
+      <p><a href="gironi3.html">Vai alla Fase Gironi 3</a></p>
+    </div>
   </section>
 </main>
 

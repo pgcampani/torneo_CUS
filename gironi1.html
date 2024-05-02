@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Girone 1</title>
+<title>Girone 2</title>
 <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
@@ -15,9 +15,19 @@
   <div class="yellow-line"></div>
   <nav>
     <ul>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="torneo.html">Home</a></li>
       <li><a href="calendario.html">Calendario</a></li>
-      <li><a href="classifica.html">Classifica</a></li>
+      <li class="dropdown">
+        <a href="classifica.html" class="dropbtn">Classifica</a>
+        <div class="dropdown-content">
+          <a href="gironi1.html">Fase Gironi 1</a>
+          <a href="gironi2.html">Fase Gironi 2</a>
+          <a href="gironi3.html">Fase Gironi 3</a>
+        </div>
+        <div class="dropdown-menu">
+          <!-- Contenuto del menu a discesa -->
+        </div>
+      </li>
       <li><a href="regolamento.html">Regolamento</a></li>
       <li><a href="contatti.html">Contatti</a></li>
       <li><a href="partecipanti.html">Partecipanti</a></li>
@@ -26,48 +36,48 @@
 </header>
 
 <main>
-    <table id="girone1-table">
-        <thead>
-            <tr>
-                <th>Nome del Giocatore</th>
-                <th>Game Vinti</th>
-                <th>Game Persi</th>
-                <th>Differenza Game</th>
-              </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Player 1</td>
-            <td id="player1-win">0</td>
-            <td id="player1-loss">0</td>
-            <td id="player1-diff">0</td>
-          </tr>
-          <tr>
-            <td>Player 2</td>
-            <td id="player2-win">0</td>
-            <td id="player2-loss">0</td>
-            <td id="player2-diff">0</td>
-          </tr>
-          <tr>
-            <td>Player 3</td>
-            <td id="player3-win">0</td>
-            <td id="player3-loss">0</td>
-            <td id="player3-diff">0</td>
-          </tr>
-          <tr>
-            <td>Player 4</td>
-            <td id="player4-win">0</td>
-            <td id="player4-loss">0</td>
-            <td id="player4-diff">0</td>
-          </tr>
-          <tr>
-            <td>Player 5</td>
-            <td id="player5-win">0</td>
-            <td id="player5-loss">0</td>
-            <td id="player5-diff">0</td>
-          </tr>
-        </tbody>
-      </table>
+  <table id="girone1-table" class="girone-table">
+    <thead>
+      <tr>
+        <th>Nome del Giocatore</th>
+        <th>Game Vinti</th>
+        <th>Game Persi</th>
+        <th class="sort">Differenza Game</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Player 1</td>
+        <td id="player1-win">0</td>
+        <td id="player1-loss">0</td>
+        <td id="player1-diff">0</td>
+      </tr>
+      <tr>
+        <td>Player 2</td>
+        <td id="player2-win">0</td>
+        <td id="player2-loss">0</td>
+        <td id="player2-diff">0</td>
+      </tr>
+      <tr>
+        <td>Player 3</td>
+        <td id="player3-win">0</td>
+        <td id="player3-loss">0</td>
+        <td id="player3-diff">0</td>
+      </tr>
+      <tr>
+        <td>Player 4</td>
+        <td id="player4-win">0</td>
+        <td id="player4-loss">0</td>
+        <td id="player4-diff">0</td>
+      </tr>
+      <tr>
+        <td>Player 5</td>
+        <td id="player5-win">0</td>
+        <td id="player5-loss">0</td>
+        <td id="player5-diff">0</td>
+      </tr>
+    </tbody>
+  </table>
 
     <!-- Tabella degli incontri -->
     <h2>Tabella degli Incontri</h2>
@@ -101,19 +111,19 @@
         </tr>
         <tr>
             <td>Player 2 vs Player 4</td>
-            <td>0-0</td>
+            <td>4-6</td>
         </tr>
         <tr>
             <td>Player 2 vs Player 5</td>
-            <td>0-0</td>
+            <td>6-7</td>
         </tr>
         <tr>
             <td>Player 3 vs Player 4</td>
-            <td>0-0</td>
+            <td>5-7</td>
         </tr>
         <tr>
             <td>Player 4 vs Player 5</td>
-            <td>0-0</td>
+            <td>6-3</td>
         </tr>
 
       </tbody>
@@ -127,3 +137,4 @@
 <script src="gestione-torneo.js"></script>
 </body>
 </html>
+

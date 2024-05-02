@@ -1,162 +1,154 @@
-document.addEventListener('DOMContentLoaded', function() {
-    // Mostra/nascondi regolamento
-    const regolamentoToggle = document.getElementById('regolamento-toggle');
-    const regolamento = document.getElementById('regolamento');
-  
-    if (regolamentoToggle && regolamento) {
-      regolamentoToggle.addEventListener('click', function() {
-        if (regolamento.style.display === 'none' || !regolamento.style.display) {
-          regolamento.style.display = 'block';
-          regolamentoToggle.innerText = 'Nascondi Regolamento';
-        } else {
-          regolamento.style.display = 'none';
-          regolamentoToggle.innerText = 'Mostra Regolamento';
-        }
-      });
-    }
-  
-    // Simulazione di aggiornamento del calendario
-    const aggiornaCalendarioButton = document.getElementById('aggiorna-calendario');
-    const calendarioContent = document.getElementById('calendario-content');
-  
-    if (aggiornaCalendarioButton && calendarioContent) {
-      aggiornaCalendarioButton.addEventListener('click', function() {
-        // Simuliamo un aggiornamento del calendario
-        calendarioContent.innerHTML = '<p>Calendario aggiornato con successo!</p>';
-      });
-    }
-  });
-
-  /*function calcolaDifferenzaGame() {
-    var gironeTable = document.getElementById("girone1-table");
-    var rows = gironeTable.getElementsByTagName("tr");
-  
-    // Loop attraverso le righe (tranne l'intestazione)
-    for (var i = 1; i < rows.length; i++) {
-      var row = rows[i];
-      var cells = row.getElementsByTagName("td");
-  
-      // Resetta i valori dei game vinti, dei game persi e della differenza
-      var gameVinti = 0;
-      var gamePersi = 0;
-  
-      // Ottieni i nomi dei giocatori dalla prima colonna della tabella degli incontri
-      var playerName = cells[0].textContent;
-  
-      // Trova i risultati per il giocatore corrente nella tabella degli incontri
-      var incontriTable = document.getElementById("incontri-table");
-      var incontriRows = incontriTable.getElementsByTagName("tr");
-  
-      for (var j = 0; j < incontriRows.length; j++) {
-        var incontriCells = incontriRows[j].getElementsByTagName("td");
-        var incontro = incontriCells[0].textContent;
-        var risultato = incontriCells[1].textContent;
-  
-        // Se l'incontro coinvolge il giocatore corrente
-        if (incontro.includes(playerName)) {
-          var risultati = risultato.split("-");
-          gameVinti += parseInt(risultati[0]);
-          gamePersi += parseInt(risultati[1]);
-        }
-      }
-  
-      // Calcola la differenza dei game
-      var differenzaGame = gameVinti - gamePersi;
-  
-      // Aggiorna i valori delle celle nella prima tabella
-      cells[1].textContent = gameVinti;
-      cells[2].textContent = gamePersi;
-      cells[3].textContent = differenzaGame;
-    }
-  }
-*/
-
 document.addEventListener("DOMContentLoaded", function() {
-  calcolaDifferenzaGame();
-  
   // Trova la tabella degli incontri
   var incontriTable = document.getElementById("incontri-table");
-  var risultatiInputs = incontriTable.querySelectorAll("tbody input");
+  if (incontriTable) {
+      // Trova gli input nella tabella degli incontri
+      var risultatiInputs = incontriTable.querySelectorAll("tbody input");
+      // Aggiungi un listener per l'evento change a ciascun input
+      risultatiInputs.forEach(function(input) {
+          input.addEventListener("change", function() {
+              calcolaDifferenzaGame();
+          });
+      });
+  }
 
-  // Aggiungi un ascoltatore degli eventi sugli input
-  risultatiInputs.forEach(function(input) {
-    input.addEventListener("change", function() {
-      // Ricalcola la differenza dei game
-      calcolaDifferenzaGame();
-    });
-  });
+  // Chiamata iniziale per calcolare la differenza dei game e inizializzare la tabella del girone
+  calcolaDifferenzaGame();
+
+  // Ordina la tabella del girone in base alla differenza dei game
+  ordinaTabellaGirone();
+
+  // Evidenzia le prime due righe della tabella del girone
+  highlightFirstTwoRows();
 });
+
+// Funzione per evidenziare le prime due righe della tabella del girone
+function highlightFirstTwoRows() {
+  var gironeTable = document.querySelector(".girone-table");
+  if (gironeTable) {
+      var rows = gironeTable.querySelectorAll("tbody tr");
+      // Rimuovi la classe 'highlight' da tutte le righe
+      rows.forEach(function(row) {
+          row.classList.remove("highlight");
+      });
+      // Aggiungi la classe 'highlight' solo alle prime due righe
+      for (var i = 0; i < 2 && i < rows.length; i++) {
+          rows[i].classList.add("highlight");
+      }
+  }
+}
 
 // Funzione per calcolare la differenza dei game e aggiornare la prima tabella
 function calcolaDifferenzaGame() {
-  var gironeTable = document.getElementById("girone1-table");
-  var rows = gironeTable.getElementsByTagName("tr");
+  var gironeTable = document.querySelector(".girone-table");
+  if (gironeTable) {
+      var rows = gironeTable.getElementsByTagName("tr");
+      // Loop attraverso le righe (tranne l'intestazione)
+      for (var i = 1; i < rows.length; i++) {
+          var row = rows[i];
+          var cells = row.getElementsByTagName("td");
 
-  // Loop attraverso le righe (tranne l'intestazione)
-  for (var i = 1; i < rows.length; i++) {
-    var row = rows[i];
-    var cells = row.getElementsByTagName("td");
+          // Ottieni il nome del giocatore
+          var playerNameCell = cells[0];
+          if (!playerNameCell) {
+              console.log("Cella del nome del giocatore non trovata");
+              continue;
+          }
+          var playerName = playerNameCell.textContent.trim().toLowerCase();
 
-    // Ottieni il nome del giocatore
-    var playerNameCell = cells[0];
-    if (!playerNameCell) {
-      console.log("Cella del nome del giocatore non trovata");
-      continue;
-    }
-    var playerName = playerNameCell.textContent.trim().toLowerCase();
-    console.log("Nome del giocatore:", playerName);
+          // Trova la tabella degli incontri
+          var incontriTable = document.getElementById("incontri-table");
+          if (!incontriTable) {
+              console.log("Tabella degli incontri non trovata");
+              continue;
+          }
 
-    // Trova la tabella degli incontri
-    var incontriTable = document.getElementById("incontri-table");
+          var incontriRows = incontriTable.getElementsByTagName("tr");
+          var gameVinti = 0;
+          var gamePersi = 0;
 
-    // Controlla se la tabella degli incontri è definita
-    if (!incontriTable) {
-      console.log("Tabella degli incontri non trovata");
-      continue;
-    }
+          for (var j = 0; j < incontriRows.length; j++) {
+              var incontroCell = incontriRows[j].getElementsByTagName("td")[0];
+              var risultatoCell = incontriRows[j].getElementsByTagName("td")[1];
 
-    var incontriRows = incontriTable.getElementsByTagName("tr");
-    var gameVinti = 0;
-    var gamePersi = 0;
+              if (!incontroCell || !risultatoCell) {
+                  console.log("Celle dei risultati non trovate per il giocatore:", playerName);
+                  continue;
+              }
 
-    for (var j = 0; j < incontriRows.length; j++) {
-      var incontriCells = incontriRows[j].getElementsByTagName("td");
-      var incontroCell = incontriCells[0];
-      var risultatoCell = incontriCells[1];
+              var incontro = incontroCell.textContent;
+              var risultato = risultatoCell.textContent;
 
-      // Controlla se il nome del giocatore e il risultato sono definiti
-      if (!incontroCell || !risultatoCell) {
-        console.log("Celle dei risultati non trovate per il giocatore:", playerName);
-        continue;
+              var [player1Name, player2Name] = incontro.split(" vs ");
+              var [player1Result, player2Result] = risultato.split("-");
+
+              if (player1Name.trim().toLowerCase() === playerName) {
+                  gameVinti += parseInt(player1Result) || 0;
+                  gamePersi += parseInt(player2Result) || 0;
+              } else if (player2Name.trim().toLowerCase() === playerName) {
+                  gameVinti += parseInt(player2Result) || 0;
+                  gamePersi += parseInt(player1Result) || 0;
+              }
+          }
+
+          var differenzaGame = gameVinti - gamePersi;
+
+          if (cells[1]) cells[1].textContent = gameVinti;
+          if (cells[2]) cells[2].textContent = gamePersi;
+          if (cells[3]) cells[3].textContent = differenzaGame;
       }
-
-      var incontro = incontroCell.textContent;
-      var risultato = risultatoCell.textContent;
-
-      // Divide l'incontro in due parti: il nome dei due giocatori e il risultato
-      var [player1Name, player2Name] = incontro.split(" vs ");
-      var [player1Result, player2Result] = risultato.split("-");
-
-      // Controlla se il giocatore è coinvolto nell'incontro
-      if (player1Name.trim().toLowerCase() === playerName) {
-        // Aggiorna i totali in base al risultato dell'incontro
-        gameVinti += parseInt(player1Result) || 0;
-        gamePersi += parseInt(player2Result) || 0;
-      } else if (player2Name.trim().toLowerCase() === playerName) {
-        // Aggiorna i totali in base al risultato dell'incontro
-        gameVinti += parseInt(player2Result) || 0;
-        gamePersi += parseInt(player1Result) || 0;
-      }
-    }
-
-    var differenzaGame = gameVinti - gamePersi;
-    console.log("Game vinti:", gameVinti);
-    console.log("Game persi:", gamePersi);
-    console.log("Differenza game:", differenzaGame);
-
-    // Aggiorna i valori delle celle nella prima tabella
-    if (cells[1]) cells[1].textContent = gameVinti;
-    if (cells[2]) cells[2].textContent = gamePersi;
-    if (cells[3]) cells[3].textContent = differenzaGame;
+      highlightFirstTwoRows();
   }
 }
+
+// Funzione per ordinare la tabella del girone in base alla differenza dei game
+function ordinaTabellaGirone() {
+  var gironeTable = document.querySelector(".girone-table");
+  if (gironeTable) {
+      var rows = Array.from(gironeTable.querySelectorAll("tbody tr"));
+
+      if (rows.length > 0) {
+          rows.sort(function(rowA, rowB) {
+              var diffA = parseInt(rowA.querySelector("td:nth-child(4)")?.textContent || 0);
+              var diffB = parseInt(rowB.querySelector("td:nth-child(4)")?.textContent || 0);
+              return diffB - diffA;
+          });
+
+          var tbody = gironeTable.querySelector("tbody");
+          rows.forEach(function(row) {
+              tbody.appendChild(row);
+          });
+      }
+  }
+}
+
+// Seleziona l'elemento della barra di navigazione con la classe "dropdown"
+const dropdown = document.querySelector('.dropdown');
+
+// Seleziona il menu a tendina
+const dropdownMenu = document.querySelector('.dropdown-menu');
+
+// Aggiungi un listener per l'evento mouseover alla barra di navigazione
+dropdown.addEventListener('mouseover', () => {
+  // Mostra il menu a tendina
+  dropdownMenu.style.display = 'block';
+});
+
+// Aggiungi un listener per l'evento mouseleave alla barra di navigazione
+dropdown.addEventListener('mouseleave', () => {
+  // Nascondi il menu a tendina
+  dropdownMenu.style.display = 'none';
+});
+
+// Aggiungi un listener per l'evento mouseover al menu a tendina
+dropdownMenu.addEventListener('mouseover', () => {
+  // Mantieni il menu a tendina aperto quando il mouse è sopra di esso
+  dropdownMenu.style.display = 'block';
+});
+
+// Aggiungi un listener per l'evento mouseleave al menu a tendina
+dropdownMenu.addEventListener('mouseleave', () => {
+  // Nascondi il menu a tendina quando il mouse esce
+  dropdownMenu.style.display = 'none';
+});
+

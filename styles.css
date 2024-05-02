@@ -51,6 +51,66 @@
   header h1 {
     margin-bottom: 20px;
   }
+/* Stili per homepage - ultimi incontri*/
+#intro {
+  background-color: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+}
+
+/* Stile per la sezione degli ultimi incontri */
+#ultimi-incontri {
+  margin-top: 0px;
+  padding: 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.score p1{
+  font-size: 16px;
+  color: #fff;
+  margin-top: -13px;
+  float: right;
+}
+
+.incontro {
+  width: 200px;
+  margin-right: 10px; /* Riduci lo spazio tra gli incontri in orizzontale */
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #12136a;
+  border-radius: 5px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.incontri-container {
+  display: flex; /* Utilizza il layout flexbox */
+  flex-wrap: wrap; /* Consenti il wrapping degli incontri su più righe */
+  justify-content: flex-start; /* Allinea gli incontri verso l'inizio del contenitore */
+}
+
+/* Stile per i titoli degli incontri */
+.incontro h3 {
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: -6px; /* Riduci lo spazio inferiore */
+  font-weight: normal; /* Rimuovi il grassetto */
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  color: #fff;
+}
+
+/* Stile per i dettagli degli incontri */
+.incontro p {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: normal; /* Rimuovi il grassetto */
+  color: #828181;
+}
+
 
   /* Stile per le immagini dei partecipanti */
   .participant-image {
@@ -146,3 +206,59 @@ th {
   background-color: #0047ab;
   color: #fff;
 }
+
+.always-highlight {
+  background-color: lightblue; /* Cambia il colore di sfondo come desiderato */
+  font-weight: bold; /* Cambia lo stile del testo come desiderato */
+}
+
+.highlight {
+  background-color: rgb(249, 249, 115); /* Cambia il colore di sfondo come desiderato */
+  color: black; /* Cambia il colore del testo come desiderato */
+  font-weight: bold; /* Cambia lo stile del testo come desiderato */
+}
+
+/* Stile per il link "Vai alla fase a gironi" */
+#link-fase-gironi a {
+  font-family: "Helvetica Neue", sans-serif; /* Utilizza un font elegante */
+  color: #007bff; /* Colore blu elegante */
+  text-decoration: none; /* Rimuovi il sottolineato di default */
+  transition: color 0.3s ease; /* Animazione per il cambio di colore */
+}
+
+#link-fase-gironi a:hover {
+  color: #0056b3; /* Cambia il colore al passaggio del mouse */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ddd; /* Sfondo leggermente più scuro */
+  min-width: 160px;
+  text-align: center; /* Centra il testo */
+  z-index: 1;
+  top: calc(100% + 1.2px); /* Posiziona la tendina sotto il contenitore padre */
+  left: 50%; /* Centra la tendina rispetto al contenitore padre */
+  transform: translateX(-50%); /* Centra orizzontalmente la tendina */
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #ccc; /* Sfondo leggermente più scuro al passaggio del mouse */
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
