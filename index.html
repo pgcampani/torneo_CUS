@@ -1,72 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gestione Torneo</title>
-<link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Torneo di Esempio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+      <div class="logo-container"></div>
+      <img src="/images/logoCUS.jpeg" alt="Logo del Torneo" class="logo">
+      <h1>Primo torneo interno CUS</h1>
+      <div class="yellow-line"></div>
+      <nav>
+        <ul>
+          <li><a href="#" id="home">Home</a></li>
+          <li><a href="#" id="calendario">Calendario</a></li>
+          <li><a href="#" id="classifica">Classifica</a></li>
+          <li><a href="#" id="regolamento">Regolamento</a></li>
+          <li><a href="#" id="contatti">Contatti</a></li>
+          <li><a href="#" id="partecipanti">Partecipanti</a></li>
+        </ul>
+      </nav>
+    </header>
 
-  <header>
-    <div class="logo-container"></div>
-    <img src="logoCUS.jpeg" alt="Logo del Torneo" class="logo">
-    <h1>Primo torneo interno CUS</h1>
-    <div class="yellow-line"></div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="calendario.html">Calendario</a></li>
-        <li class="dropdown">
-          <a href="classifica.html" class="dropbtn">Classifica</a>
-          <div class="dropdown-content">
-            <a href="gironi1.html">Fase Gironi 1</a>
-            <a href="gironi2.html">Fase Gironi 2</a>
-            <a href="gironi3.html">Fase Gironi 3</a>
-          </div>
-        </li>
-        <li><a href="regolamento.html">Regolamento</a></li>
-        <li><a href="contatti.html">Contatti</a></li>
-        <li><a href="partecipanti.html">Partecipanti</a></li>
-      </ul>
-    </nav>
-  </header>
-  
-  <div id="container">
-    <div id="ultimi-incontri">
-      <div class="incontro">
-        <p>9 aprile, 19:00</p>
-        <h3>Player 1</h3>
-        <h3>Player 2</h3>
-      </div>
-      <div class="incontro">
-        <p>9 aprile, 19:00</p>
-        <h3>Player 1</h3>
-        <h3>Player 2</h3>
-      </div>
-      <div class="incontro">
-        <p>9 aprile, 19:00</p>
-        <div class="score">
-          <h3>Di Lupo</h3><p1>6</p1>
-          <h3>Russo</h3><p1>2</p1>
-        </div>
-      </div>
-      <div class="incontro">
-        <p>9 aprile, 19:00</p>
-        <div class="score">
-          <h3>Pioli</h3><p1>6</p1>
-          <h3>Maccotta</h3><p1>3</p1>
-        </div>
-      </div>
-      <!-- Aggiungi altri blocchi per gli incontri -->
-    </div>
-  </div>
-<main>
-</main>
+    <main>
+        <section id="data">
+            <h2>Informazioni del Torneo</h2>
+            <p>Benvenuti al torneo di esempio. Qui troverete tutte le informazioni sui partecipanti e i risultati.</p>
+        </section>
 
-<footer>
-  <p>&copy; 2024 Gestione Torneo. Tutti i diritti riservati.</p>
-</footer>
-<script src="gestione-torneo.js"></script>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Torneo di Esempio. Tutti i diritti riservati.</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>

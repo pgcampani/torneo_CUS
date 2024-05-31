@@ -1,0 +1,118 @@
+{
+    "participants": [
+      {
+        "name": "Ansaldo Marco",
+        "image": "immagini/giocatore1.jpg",
+        "age": "Età: 25 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Bianchi Gianmarco",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Campani Pier Giorgio",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Carpaneto Gabriele",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Degl'Innocenti Ranieri",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Di Lupo Tommaso",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Di Pasquale Ludovica",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Giusti Tommaso",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Marchetti Arianna",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Piantini Lorenzo",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Pioli Maria Giulia",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Pioli Maria Viola",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Rappuolo Giacomo",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Resta Elisa",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Restani Giulio",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Russo Federica",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Salina Jonathan",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Sgambelluri Nicola",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      },
+      {
+        "name": "Vitiello Daniele",
+        "image": "immagini/giocatore2.jpg",
+        "age": "Età: 28 anni",
+        "description": "Descrizione: Breve descrizione del giocatore..."
+      }
+    ]
+}

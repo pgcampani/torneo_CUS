@@ -1,0 +1,7 @@
+{
+    "results": [
+        {"match": "Giocatore 1 vs Giocatore 2", "score": "3-1"},
+        {"match": "Giocatore 3 vs Giocatore 4", "score": "2-2"},
+        {"match": "Giocatore 1 vs Giocatore 3", "score": "1-0"}
+    ]
+}
